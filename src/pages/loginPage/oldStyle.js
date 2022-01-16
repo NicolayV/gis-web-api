@@ -2,8 +2,6 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles(() => ({
   root: {
-    //     backgroundColor: "grey" - стиль временный, нужно установить картинку
-    backgroundColor: "grey",
     position: "absolute",
     width: "1376px",
     height: "591px",

@@ -12,16 +12,16 @@ import {
 import Button from "@material-ui/core/Button";
 import { useStyles } from "./style";
 
-const Login = () => {
+const LoginPage = () => {
   const classes = useStyles();
   const [selectedTab, setSelectedTab] = useState(0);
   const handleChange = (event, newValue) => setSelectedTab(newValue);
 
   return (
-    <div className={classes.root}>
+    <div className={classes.loginWrapper}>
       <Paper className={classes.layout}>
         <Tabs
-          //   className={classes.tabs}
+          className={classes.tabs}
           value={selectedTab}
           onChange={handleChange}
         >
@@ -29,43 +29,51 @@ const Login = () => {
           <Tab className={classes.signUp} label="Регистрация" />
         </Tabs>
         <TextField
-          className={classes.inputEmail}
-          //   margin="normal"
-          //   required
-          //   fullWidth
-          //   id="email"
-          //   label="Email Address"
-          //   name="email"
-          //   autoComplete="email"
-          //   autoFocus
+        // className={classes.inputEmail}
+        //   margin="normal"
+        //   required
+        //   fullWidth
+        //   id="email"
+        //   label="Email Address"
+        //   name="email"
+        //   autoComplete="email"
+        //   autoFocus
         />
         <TextField
-          className={classes.inputPassword}
-          //   margin="normal"
-          //   required
-          //   fullWidth
-          //   name="password"
-          //   label="Password"
-          //   type="password"
-          //   id="password"
-          //   autoComplete="current-password"
+        // className={classes.inputPassword}
+        //   margin="normal"
+        //   required
+        //   fullWidth
+        //   name="password"
+        //   label="Password"
+        //   type="password"
+        //   id="password"
+        //   autoComplete="current-password"
         />
         <Checkbox
-          className={classes.checkbox}
+          // className={classes.checkbox}
           inputProps={{ "aria-label": "disabled checkbox" }}
         />
 
         <ButtonGroup
-          className={classes.buttonGroup}
+          // className={classes.buttonGroup}
           orientation="vertical"
           //   color="primary"
           //   aria-label="vertical outlined primary button group"
         >
-          <Button className={classes.button}>One</Button>
-          <Link className={classes.buttonLink}>Забыли пароль?</Link>
+          <Button
+          // className={classes.button}
+          >
+            One
+          </Button>
+          <Link
+          // className={classes.buttonLink}
+          >
+            Забыли пароль?
+          </Link>
         </ButtonGroup>
       </Paper>
     </div>
   );
 };
-export default Login;
+export default LoginPage;

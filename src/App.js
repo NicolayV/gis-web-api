@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { AuthContext } from "./context";
 import { Route, Routes, Navigate, BrowserRouter } from "react-router-dom";
 
-import Login from "./pages/Login";
+import LoginPage from "./pages/loginPage/LoginPage";
 import LoginForm from "./pages/LoginForm";
-import GisMap from "./pages/GisMap";
+import GisMap from "./pages/mapPage/mapPage";
 import AppRouter from "./router/AppRouter";
 
 function App() {
@@ -23,16 +23,10 @@ function App() {
         setIsAuth,
       }}
     >
-      <BrowserRouter>
-        {/* <Routes>
-          <Route path="/login" element={<LoginForm />} />
-          <Route path="/gismap" element={<GisMap />} />
-          <Route path="*" element={<Navigate to="/login" />} />
-        </Routes> */}
-
+      {/* <BrowserRouter>
         <AppRouter />
-      </BrowserRouter>
-      {/* <Login /> */}
+      </BrowserRouter> */}
+      <LoginPage />
     </AuthContext.Provider>
   );
 }

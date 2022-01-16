@@ -44,6 +44,19 @@ export const useStyles = makeStyles(() => ({
     },
   },
 
+  h1Title: {
+    color: "#FFFFFF",
+    position: "absolute",
+    left: "800px",
+    top: "215px",
+  },
+  h3Title: {
+    color: "#FFFFFF",
+    position: "absolute",
+    left: "940px",
+    top: "250px",
+  },
+
   layout: {
     background: "rgba(63, 99, 142, 0.38)",
     backgroundBlendMode: "overlay",

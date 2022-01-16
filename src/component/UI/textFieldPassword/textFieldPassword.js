@@ -12,6 +12,7 @@ const InputPassword = ({ children, ...props }) => {
     <TextField
       {...props}
       // className={classes.inputPassword}
+      fullWidth
       name="password"
       id="password"
       InputProps={{

@@ -12,6 +12,7 @@ const InputEmail = ({ children, ...props }) => {
     <TextField
       {...props}
       // className={cl.input}
+      fullWidth
       name="email"
       id="email"
       InputProps={{

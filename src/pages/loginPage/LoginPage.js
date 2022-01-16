@@ -32,8 +32,9 @@ const LoginPage = () => {
       <div className={classes.loginWrapper}>
         <h1 className={classes.h1Title}>AEROSPACE</h1>
         <h3 className={classes.h3Title}>AGRO</h3>
+
         <Paper className={classes.layout}>
-          <form onSubmit={onSubmitHandler}>
+          <form className={classes.form} onSubmit={onSubmitHandler}>
             <Tabs
               className={classes.tabs}
               value={selectedTab}

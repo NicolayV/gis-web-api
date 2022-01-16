@@ -2,7 +2,9 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles(() => ({
   loginWrapper: {
+    flexDirection: "column",
     margin: "-8px",
+
     height: "100vh",
     display: "flex",
     justifyContent: "center",
@@ -46,91 +48,64 @@ export const useStyles = makeStyles(() => ({
 
   h1Title: {
     color: "#FFFFFF",
-    position: "absolute",
-    left: "800px",
-    top: "215px",
+    marginBottom: "0px",
   },
 
   h3Title: {
     color: "#FFFFFF",
-    position: "absolute",
-    left: "940px",
-    top: "250px",
+    marginTop: "0px",
   },
 
   layout: {
     background: "rgba(63, 99, 142, 0.38)",
-    backgroundBlendMode: "overlay",
-    backdropFilter: "blur(70px)",
   },
 
-  signIn: {
-    fontFamily: "HandelGothic TL",
-    color: "#FFFFFF",
-    margin: "0px 12px",
-    fontSize: "20px",
-    letterSpacing: "0.06em",
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-around",
   },
 
-  signUp: {
-    width: "143px",
-    margin: "0px 12px",
-    fontSize: "20px",
-    alignItems: "flex-end",
-    fontFamily: "HandelGothic TL",
-    lineHeight: "24px",
-    letterSpacing: "0.06em",
+  tabs: {
+    display: "flex",
   },
+
+  signIn: {},
+
+  signUp: {},
 
   inputPassword: {
+    // marginTop: 20,
+    // marginBottom: 20,
+    // display: "blocK",
     border: "1px solid #FFFFFF",
-    height: "56px",
-    padding: "0px 12px 0px 16px",
-    margin: "15px 0px",
-    display: "flex",
-    boxSizing: "border-box",
-    alignItems: "center",
-    flexDirection: "row",
   },
 
   inputEmail: {
+    marginTop: 20,
+    marginBottom: 20,
+    display: "blocK",
     border: "1px solid #FFFFFF",
-    height: "56px",
-    padding: "0px 12px 0px 16px",
-    margin: "15px 0px",
-    display: "flex",
-    boxSizing: "border-box",
-    alignItems: "center",
-    flexDirection: "row",
   },
 
   checkbox: {
-    position: "relative",
-    top: "-9px",
-    left: "-15px",
+    justifyContent: "flex-start",
+    padding: "10px 0px",
+    margin: "10px 0px",
   },
 
   button: {
-    width: "460px",
-    height: "56px",
-    top: "-9px",
-    left: "-5px",
-    fontFamily: "HandelGothic TL",
-    color: "#FFF323",
-    margin: "8px 0px",
     border: "1px solid #FFF323",
+    padding: "10px 0px",
+    margin: "10px 0px",
   },
 
   link: {
-    position: "relative",
-    left: "165px",
-    fontFamily: "HandelGothic TL",
     color: "#FFF323",
+    alignSelf: "center",
+    padding: "10px",
+    margin: "10px",
   },
 
-  aaa: {
-    color: "#FFFFFF",
-    position: "absolute",
-    bottom: "100px",
-  },
+  aaa: {},
 }));

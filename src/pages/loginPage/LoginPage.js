@@ -7,9 +7,13 @@ import {
   Checkbox,
   Link,
   InputAdornment,
+  FormControl,
+  InputLabel,
+  OutlinedInput,
+  IconButton,
 } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
-import { AccountCircle, MailOutline } from "@material-ui/icons";
+import { MailTwoTone, VpnKey } from "@material-ui/icons";
 
 import { useStyles } from "./style";
 
@@ -31,15 +35,14 @@ const LoginPage = () => {
           <Tab className={classes.signIn} label="Вход" />
           <Tab className={classes.signUp} label="Регистрация" />
         </Tabs>
-
         <TextField
           className={classes.inputEmail}
           name="email"
           id="email"
           InputProps={{
             startAdornment: (
-              <InputAdornment position="">
-                <MailOutline />
+              <InputAdornment position="start">
+                <MailTwoTone />
               </InputAdornment>
             ),
           }}
@@ -48,6 +51,18 @@ const LoginPage = () => {
           className={classes.inputPassword}
           name="password"
           id="password"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <VpnKey />
+              </InputAdornment>
+            ),
+            endAdornment: (
+              <InputAdornment position="end">
+                <IconButton edge="end">показать</IconButton>
+              </InputAdornment>
+            ),
+          }}
         />
         <Checkbox className={classes.checkbox} />
 

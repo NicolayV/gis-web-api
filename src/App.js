@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
 import { AuthContext } from "./context";
-import { Route, Routes, Navigate, BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
-import LoginPage from "./pages/loginPage/LoginPage";
-import LoginForm from "./pages/LoginForm";
-import GisMap from "./pages/mapPage/mapPage";
 import AppRouter from "./router/AppRouter";
 
 function App() {
@@ -23,10 +20,9 @@ function App() {
         setIsAuth,
       }}
     >
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <AppRouter />
-      </BrowserRouter> */}
-      <LoginPage />
+      </BrowserRouter>
     </AuthContext.Provider>
   );
 }

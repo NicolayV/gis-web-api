@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { AuthContext } from "../context";
-import LoginForm from "../pages/LoginForm";
+// import LoginForm from "../pages/LoginForm";
+import LoginPage from "../pages/loginPage/LoginPage";
 import GisMap from "../pages/mapPage/mapPage";
 
 const AppRouter = () => {
@@ -16,7 +17,8 @@ const AppRouter = () => {
     </Routes>
   ) : (
     <Routes>
-      <Route path="/login" element={<LoginForm />} />
+      {/* <Route path="/login" element={<LoginForm />} /> */}
+      <Route path="/login" element={<LoginPage />} />
       <Route path="*" element={<Navigate to="/login" />} />
     </Routes>
   );

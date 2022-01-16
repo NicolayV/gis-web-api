@@ -7,9 +7,6 @@ import {
   Checkbox,
   Link,
   InputAdornment,
-  FormControl,
-  InputLabel,
-  OutlinedInput,
   IconButton,
 } from "@material-ui/core";
 import Button from "@material-ui/core/Button";

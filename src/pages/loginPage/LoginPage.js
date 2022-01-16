@@ -28,50 +28,19 @@ const LoginPage = () => {
           <Tab className={classes.signIn} label="Вход" />
           <Tab className={classes.signUp} label="Регистрация" />
         </Tabs>
-        <TextField
-        // className={classes.inputEmail}
-        //   margin="normal"
-        //   required
-        //   fullWidth
-        //   id="email"
-        //   label="Email Address"
-        //   name="email"
-        //   autoComplete="email"
-        //   autoFocus
-        />
-        <TextField
-        // className={classes.inputPassword}
-        //   margin="normal"
-        //   required
-        //   fullWidth
-        //   name="password"
-        //   label="Password"
-        //   type="password"
-        //   id="password"
-        //   autoComplete="current-password"
-        />
-        <Checkbox
-          // className={classes.checkbox}
-          inputProps={{ "aria-label": "disabled checkbox" }}
-        />
 
-        <ButtonGroup
-          // className={classes.buttonGroup}
-          orientation="vertical"
-          //   color="primary"
-          //   aria-label="vertical outlined primary button group"
-        >
-          <Button
-          // className={classes.button}
-          >
-            One
-          </Button>
-          <Link
-          // className={classes.buttonLink}
-          >
-            Забыли пароль?
-          </Link>
-        </ButtonGroup>
+        <TextField className={classes.inputEmail} name="email" id="email" />
+        <TextField
+          className={classes.inputPassword}
+          name="password"
+          id="password"
+        />
+        <Checkbox className={classes.checkbox} />
+
+        <Button className={classes.button} variant="outlined">
+          Войти
+        </Button>
+        <Link className={classes.link}>Забыли пароль?</Link>
       </Paper>
     </div>
   );

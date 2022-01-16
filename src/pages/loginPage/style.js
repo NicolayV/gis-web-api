@@ -2,6 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles(() => ({
   loginWrapper: {
+    margin: "-8px",
     height: "100vh",
     display: "flex",
     justifyContent: "center",
@@ -64,5 +65,47 @@ export const useStyles = makeStyles(() => ({
     fontFamily: "HandelGothic TL",
     lineHeight: "24px",
     letterSpacing: "0.06em",
+  },
+
+  inputEmail: {
+    border: "1px solid #FFFFFF",
+    height: "56px",
+    padding: "0px 12px 0px 16px",
+    margin: "15px 0px",
+    display: "flex",
+    boxSizing: "border-box",
+    alignItems: "center",
+    flexDirection: "row",
+  },
+  inputPassword: {
+    border: "1px solid #FFFFFF",
+    height: "56px",
+    padding: "0px 12px 0px 16px",
+    margin: "15px 0px",
+    display: "flex",
+    boxSizing: "border-box",
+    alignItems: "center",
+    flexDirection: "row",
+  },
+  checkbox: {
+    position: "relative",
+    top: "-9px",
+    left: "-15px",
+  },
+  button: {
+    width: "460px",
+    height: "56px",
+    top: "-9px",
+    left: "-5px",
+    fontFamily: "HandelGothic TL",
+    color: "#FFF323",
+    margin: "8px 0px",
+    border: "1px solid #FFF323",
+  },
+  link: {
+    position: "relative",
+    left: "165px",
+    fontFamily: "HandelGothic TL",
+    color: "#FFF323",
   },
 }));

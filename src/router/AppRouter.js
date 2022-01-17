@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { AuthContext } from "../context";
-import LoginPage from "../pages/LoginPage/LoginPage";
-import GisMap from "../pages/MapPage/mapPage";
+import LoginPage from "../pages/LoginPage/";
+import GisMap from "../pages/MapPage/";
 
 const AppRouter = () => {
   const { isAuth } = useContext(AuthContext);

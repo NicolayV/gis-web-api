@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AppBar, Paper, Tab, Tabs } from "@material-ui/core";
+import { Paper, Tab, Tabs } from "@material-ui/core";
 
 import { useStyles } from "./style";
 

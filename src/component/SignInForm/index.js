@@ -22,9 +22,9 @@ const SignInForm = () => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     console.log(email.value, password.value, checked);
-    //! setIsAuth(true);
-    //! localStorage.setItem("auth", "true");
-    //! navigate("/gismap");
+    setIsAuth(true);
+    localStorage.setItem("auth", "true");
+    navigate("/gismap");
   };
 
   return (

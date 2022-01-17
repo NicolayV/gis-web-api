@@ -7,4 +7,7 @@ export const useStyles = makeStyles(() => ({
     padding: 5,
     border: "1px solid #FFFFFF",
   },
+  inputFormSvg: {
+    color: "white",
+  },
 }));

@@ -46,12 +46,12 @@ export const useStyles = makeStyles(() => ({
     },
   },
 
-  h1Title: {
+  title: {
     color: "#FFFFFF",
     marginBottom: "0px",
   },
 
-  h3Title: {
+  subTitle: {
     color: "#FFFFFF",
     marginTop: "0px",
     alignSelf: "flex-end",

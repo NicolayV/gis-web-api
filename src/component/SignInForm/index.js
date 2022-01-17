@@ -49,6 +49,7 @@ const SignInForm = () => {
         className={classes.checkbox}
         control={
           <Checkbox
+            className={classes.checkboxSvg}
             checked={checked}
             onChange={(prev) => setChecked(!checked)}
           />

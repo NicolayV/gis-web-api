@@ -28,7 +28,7 @@ const FormInput = ({
           {...props}
           startAdornment={
             <InputAdornment position="start">
-              <People />
+              <People className={classes.inputFormSvg} />
             </InputAdornment>
           }
         />
@@ -55,7 +55,7 @@ const FormInput = ({
           {...props}
           startAdornment={
             <InputAdornment position="start">
-              <MailTwoTone />
+              <MailTwoTone className={classes.inputFormSvg} />
             </InputAdornment>
           }
         />
@@ -82,7 +82,7 @@ const FormInput = ({
           {...props}
           startAdornment={
             <InputAdornment position="start">
-              <VpnKey />
+              <VpnKey className={classes.inputFormSvg} />
             </InputAdornment>
           }
           endAdornment={

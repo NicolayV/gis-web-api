@@ -5,6 +5,7 @@ export const useStyles = makeStyles(() => ({
     border: "1px solid #FFF323",
     padding: "10px 0px",
     margin: "20px 0px",
+    color: "yellow",
   },
 
   link: {
@@ -12,5 +13,6 @@ export const useStyles = makeStyles(() => ({
     alignSelf: "center",
     padding: "10px",
     margin: "10px",
+    fontFamily: "HandelGothic TL",
   },
 }));

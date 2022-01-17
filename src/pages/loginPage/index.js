@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Paper, Tab, Tabs } from "@material-ui/core";
+import { Paper, Tab, Tabs, withStyles } from "@material-ui/core";
 
 import { useStyles } from "./style";
 
@@ -21,8 +21,8 @@ const LoginPage = () => {
             display: "flex",
           }}
         >
-          <h1 className={classes.h1Title}>AEROSPACE</h1>
-          <h3 className={classes.h3Title}>AGRO</h3>
+          <h1 className={classes.title}>AEROSPACE</h1>
+          <h3 className={classes.subTitle}>AGRO</h3>
         </span>
 
         <Paper className={classes.layout}>

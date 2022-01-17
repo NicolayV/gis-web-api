@@ -5,6 +5,9 @@ export const useStyles = makeStyles(() => ({
     marginTop: 5,
     justifyContent: "flex-start",
   },
+  checkboxSvg: {
+    color: "white",
+  },
 
   form: {
     display: "flex",

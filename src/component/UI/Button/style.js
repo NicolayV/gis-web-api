@@ -1,10 +1,16 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles(() => ({
-  inputForm: {
-    marginTop: 20,
-    marginBottom: 20,
-    // display: "blocK",
-    // border: "1px solid #FFFFFF",
+  button: {
+    border: "1px solid #FFF323",
+    padding: "10px 0px",
+    margin: "20px 0px",
+  },
+
+  link: {
+    color: "#FFF323",
+    alignSelf: "center",
+    padding: "10px",
+    margin: "10px",
   },
 }));

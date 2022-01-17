@@ -7,21 +7,44 @@ import {
   Input,
   InputAdornment,
 } from "@material-ui/core";
-import { MailTwoTone, VpnKey } from "@material-ui/icons";
+import { MailTwoTone, People, VpnKey } from "@material-ui/icons";
 
 const FormInput = ({
   children,
   inputType = "text",
   email,
   password,
+  loginName,
   ...props
 }) => {
   const classes = useStyles();
   const [showPassword, setShowPassword] = useState(false);
-  console.log(password, email);
 
   if (inputType === "text") {
-    return <Input {...props} />;
+    return (
+      <>
+        <Input
+          className={classes.inputForm}
+          {...props}
+          startAdornment={
+            <InputAdornment position="start">
+              <People />
+            </InputAdornment>
+          }
+        />
+        <FormHelperText>
+          {(loginName.isDirty && loginName.isEmpty && (
+            <span>Поле не может быть пустым</span>
+          )) ||
+            (loginName.isDirty && loginName.minLengthError && (
+              <span>Не корректная длина имени</span>
+            )) ||
+            (loginName.isDirty && loginName.maxLengthError && (
+              <span>Не корректная длина имени</span>
+            ))}
+        </FormHelperText>
+      </>
+    );
   }
 
   if (inputType === "email") {

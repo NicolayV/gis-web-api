@@ -61,31 +61,7 @@ export const useStyles = makeStyles(() => ({
     background: "rgba(63, 99, 142, 0.38)",
   },
 
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-around",
-  },
-
   tabs: {
     display: "flex",
-  },
-
-  checkbox: {
-    marginTop: 5,
-    justifyContent: "flex-start",
-  },
-
-  button: {
-    border: "1px solid #FFF323",
-    padding: "10px 0px",
-    margin: "10px 0px",
-  },
-
-  link: {
-    color: "#FFF323",
-    alignSelf: "center",
-    padding: "10px",
-    margin: "10px",
   },
 }));

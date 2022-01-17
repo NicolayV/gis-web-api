@@ -54,6 +54,7 @@ export const useStyles = makeStyles(() => ({
   h3Title: {
     color: "#FFFFFF",
     marginTop: "0px",
+    alignSelf: "flex-end",
   },
 
   layout: {
@@ -70,28 +71,9 @@ export const useStyles = makeStyles(() => ({
     display: "flex",
   },
 
-  signIn: {},
-
-  signUp: {},
-
-  inputPassword: {
-    // marginTop: 20,
-    // marginBottom: 20,
-    // display: "blocK",
-    border: "1px solid #FFFFFF",
-  },
-
-  inputEmail: {
-    marginTop: 20,
-    marginBottom: 20,
-    display: "blocK",
-    border: "1px solid #FFFFFF",
-  },
-
   checkbox: {
+    marginTop: 5,
     justifyContent: "flex-start",
-    padding: "10px 0px",
-    margin: "10px 0px",
   },
 
   button: {
@@ -106,6 +88,4 @@ export const useStyles = makeStyles(() => ({
     padding: "10px",
     margin: "10px",
   },
-
-  aaa: {},
 }));

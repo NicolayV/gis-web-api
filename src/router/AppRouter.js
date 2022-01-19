@@ -1,13 +1,15 @@
 import React, { useContext } from "react";
-import { Navigate, useRoutes } from "react-router-dom";
+import { Navigate, Outlet, useRoutes } from "react-router-dom";
 import { AuthContext } from "../context";
 import LoginPage from "../pages/LoginPage/";
 import GisMap from "../pages/MapPage/";
 
-const AppRouter = () => {
+const AuthProvider = ({ route }) => {
   const { isAuth } = useContext(AuthContext);
-  console.log("isAuth", isAuth);
+  return isAuth ? <Outlet /> : route;
+};
 
+const AppRouter = () => {
   const routesPublic = useRoutes([
     { path: "/login", element: <LoginPage /> },
     { path: "/*", element: <Navigate to="/login" /> },
@@ -18,11 +20,7 @@ const AppRouter = () => {
     { path: "/*", element: <Navigate to="/gismap" /> },
   ]);
 
-  const GuardRoute = ({ children }) => {
-    return isAuth ? children : routesPublic;
-  };
-
-  return <GuardRoute> {routesPrivate}</GuardRoute>;
+  return <AuthProvider route={routesPublic}>{routesPrivate}</AuthProvider>;
 };
 
 export default AppRouter;

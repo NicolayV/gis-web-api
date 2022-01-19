@@ -18,7 +18,11 @@ const AppRouter = () => {
     { path: "/*", element: <Navigate to="/gismap" /> },
   ]);
 
-  return isAuth ? routesPrivate : routesPublic;
+  const GuardRoute = ({ children }) => {
+    return isAuth ? children : routesPublic;
+  };
+
+  return <GuardRoute> {routesPrivate}</GuardRoute>;
 };
 
 export default AppRouter;

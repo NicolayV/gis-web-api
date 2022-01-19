@@ -47,7 +47,13 @@ const useValidation = (value, validations) => {
     }
   }, [isEmpty, minLengthError, maxLengthError, emailError]);
 
-  return { isEmpty, minLengthError, maxLengthError, emailError, inputValid };
+  return {
+    isEmpty,
+    minLengthError,
+    maxLengthError,
+    emailError,
+    inputValid,
+  };
 };
 
 export default useValidation;

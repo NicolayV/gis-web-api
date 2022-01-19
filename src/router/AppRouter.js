@@ -1,25 +1,24 @@
 import React, { useContext } from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Navigate, useRoutes } from "react-router-dom";
 import { AuthContext } from "../context";
 import LoginPage from "../pages/LoginPage/";
 import GisMap from "../pages/MapPage/";
 
 const AppRouter = () => {
   const { isAuth } = useContext(AuthContext);
-
   console.log("isAuth", isAuth);
 
-  return isAuth ? (
-    <Routes>
-      <Route path="/gismap" element={<GisMap />} />
-      <Route path="*" element={<Navigate to="/gismap" />} />
-    </Routes>
-  ) : (
-    <Routes>
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="*" element={<Navigate to="/login" />} />
-    </Routes>
-  );
+  const routesPublic = useRoutes([
+    { path: "/login", element: <LoginPage /> },
+    { path: "/*", element: <Navigate to="/login" /> },
+  ]);
+
+  const routesPrivate = useRoutes([
+    { path: "/gismap", element: <GisMap /> },
+    { path: "/*", element: <Navigate to="/gismap" /> },
+  ]);
+
+  return isAuth ? routesPrivate : routesPublic;
 };
 
 export default AppRouter;

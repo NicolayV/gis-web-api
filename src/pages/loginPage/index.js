@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Paper, Tab, Tabs, withStyles } from "@material-ui/core";
+import { Paper, Tab, Tabs } from "@material-ui/core";
 
 import { useStyles } from "./style";
 
@@ -9,37 +9,44 @@ import SignUpForm from "../../component/SignUpForm";
 const LoginPage = () => {
   const classes = useStyles();
 
-  const [selectedTab, setSelectedTab] = useState(0);
-  const handleChange = (event, newValue) => setSelectedTab(newValue);
+  const [value, setValue] = useState(0);
+  const handleTabs = (e, val) => {
+    setValue(val);
+  };
 
   return (
-    <>
-      <div className={classes.loginWrapper}>
-        <span
-          style={{
-            flexDirection: "column",
-            display: "flex",
-          }}
-        >
-          <h1 className={classes.title}>AEROSPACE</h1>
-          <h3 className={classes.subTitle}>AGRO</h3>
-        </span>
+    <div className={classes.loginWrapper}>
+      <span
+        style={{
+          flexDirection: "column",
+          display: "flex",
+        }}
+      >
+        <h1 className={classes.title}>AEROSPACE</h1>
+        <h3 className={classes.subTitle}>AGRO</h3>
+      </span>
 
-        <Paper className={classes.layout}>
-          <Tabs
-            className={classes.tabs}
-            value={selectedTab}
-            onChange={handleChange}
-          >
-            <Tab className={classes.signIn} label="Вход" />
-            <Tab className={classes.signUp} label="Регистрация" />
-          </Tabs>
+      <Paper className={classes.layout}>
+        <Tabs value={value} onChange={handleTabs}>
+          <Tab label="Вход" />
+          <Tab label="Регистрация" />
+        </Tabs>
 
-          {!!selectedTab ? <SignUpForm /> : <SignInForm />}
-        </Paper>
-      </div>
-    </>
+        <TabPanel value={value} index={0}>
+          <SignInForm />
+        </TabPanel>
+        <TabPanel value={value} index={1}>
+          <SignUpForm />
+        </TabPanel>
+      </Paper>
+    </div>
   );
 };
+
+function TabPanel(props) {
+  const { children, value, index } = props;
+
+  return <div>{value === index && children}</div>;
+}
 
 export default LoginPage;

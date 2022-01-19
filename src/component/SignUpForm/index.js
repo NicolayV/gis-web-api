@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Checkbox, FormControlLabel } from "@material-ui/core";
+import { Checkbox, FormControlLabel, FormHelperText } from "@material-ui/core";
 
 import { useStyles } from "./style";
 
@@ -30,27 +30,60 @@ const SignUpForm = () => {
     <form className={classes.form} onSubmit={onSubmitHandler}>
       <FormInput
         // inputType="text"
-        loginName={loginName}
         onChange={(e) => loginName.onChange(e)}
         onBlur={(e) => loginName.onBlur(e)}
         value={loginName.value}
       />
 
+      <FormHelperText>
+        {(loginName.isDirty && loginName.isEmpty && (
+          <span>Поле не может быть пустым</span>
+        )) ||
+          (loginName.isDirty && loginName.minLengthError && (
+            <span>Не корректная длина имени</span>
+          )) ||
+          (loginName.isDirty && loginName.maxLengthError && (
+            <span>Не корректная длина имени</span>
+          ))}
+      </FormHelperText>
+
       <FormInput
         inputType="email"
-        email={email}
         onChange={(e) => email.onChange(e)}
         onBlur={(e) => email.onBlur(e)}
         value={email.value}
       />
 
+      <FormHelperText error>
+        {(email.isDirty && email.isEmpty && (
+          <span>Поле не может быть пустым</span>
+        )) ||
+          (email.isDirty && email.minLengthError && (
+            <span>Не корректная длина</span>
+          )) ||
+          (email.isDirty && email.emailError && (
+            <span>Не корректный емейл</span>
+          ))}
+      </FormHelperText>
+
       <FormInput
         inputType="password"
-        password={password}
         onChange={(e) => password.onChange(e)}
         onBlur={(e) => password.onBlur(e)}
         value={password.value}
       />
+
+      <FormHelperText>
+        {(password.isDirty && password.isEmpty && (
+          <span>Пароль не может быть пустым</span>
+        )) ||
+          (password.isDirty && password.maxLengthError && (
+            <span>Слишком длинный пароль</span>
+          )) ||
+          (password.isDirty && password.minLengthError && (
+            <span>Не корректная длина пароля</span>
+          ))}
+      </FormHelperText>
 
       <ButtonForm
         inputType="submit"

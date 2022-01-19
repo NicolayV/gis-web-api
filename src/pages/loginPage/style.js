@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 export const useStyles = makeStyles(() => ({
   loginWrapper: {
     flexDirection: "column",
-    margin: "-8px",
 
     height: "100vh",
     display: "flex",

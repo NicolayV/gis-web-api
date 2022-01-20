@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import { Navigate, Outlet, useRoutes } from "react-router-dom";
+import { Navigate, useRoutes } from "react-router-dom";
 import { AuthContext } from "../context";
 import LoginPage from "../pages/LoginPage/";
 import GisMap from "../pages/MapPage/";
 
-const AuthProvider = ({ route }) => {
+const AuthProvider = ({ route, children }) => {
   const { isAuth } = useContext(AuthContext);
-  return isAuth ? <Outlet /> : route;
+  return isAuth ? children : route;
 };
 
 const AppRouter = () => {

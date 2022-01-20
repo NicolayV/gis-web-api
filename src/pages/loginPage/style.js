@@ -19,7 +19,7 @@ export const useStyles = makeStyles(() => ({
       height: 413,
       position: "relative",
       backdropFilter: "blur(70px)",
-      padding: "40px 77px",
+      padding: "15px 60px",
 
       "&:before, &:after, &>:first-child:before, &>:first-child:after": {
         content: "' '",

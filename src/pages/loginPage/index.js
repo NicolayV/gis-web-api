@@ -14,6 +14,10 @@ const LoginPage = () => {
     setValue(val);
   };
 
+  const TabPanel = ({ children, value, index }) => (
+    <div>{value === index && children}</div>
+  );
+
   return (
     <div className={classes.loginWrapper}>
       <span
@@ -42,11 +46,5 @@ const LoginPage = () => {
     </div>
   );
 };
-
-function TabPanel(props) {
-  const { children, value, index } = props;
-
-  return <div>{value === index && children}</div>;
-}
 
 export default LoginPage;

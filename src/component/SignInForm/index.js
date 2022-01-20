@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Checkbox, FormControlLabel, FormHelperText } from "@material-ui/core";
 
 import { useStyles } from "./style";
@@ -19,6 +19,8 @@ const SignInForm = () => {
 
   const [checked, setChecked] = useState(false);
 
+  const [errorMessage, setErrorMessage] = useState(null);
+
   const onSubmitHandler = (event) => {
     event.preventDefault();
     console.log(email.value, password.value, checked);
@@ -26,6 +28,26 @@ const SignInForm = () => {
     localStorage.setItem("auth", "true");
     navigate("/gismap");
   };
+
+  const { isDirty, isEmpty, minLengthError, emailError } = email;
+  useEffect(() => {
+    if (!isDirty) {
+      return;
+    }
+    if (isEmpty) {
+      setErrorMessage(<span>Поле не может быть пустым</span>);
+      return;
+    }
+    if (minLengthError) {
+      setErrorMessage(<span>Не корректная длина</span>);
+      return;
+    }
+    if (emailError) {
+      setErrorMessage(<span>Не корректный емейл</span>);
+      return;
+    }
+    setErrorMessage(null);
+  }, [isDirty, isEmpty, minLengthError, emailError]);
 
   return (
     <form className={classes.form} onSubmit={onSubmitHandler}>
@@ -35,18 +57,7 @@ const SignInForm = () => {
         onBlur={(e) => email.onBlur(e)}
         value={email.value}
       />
-
-      <FormHelperText error>
-        {(email.isDirty && email.isEmpty && (
-          <span>Поле не может быть пустым</span>
-        )) ||
-          (email.isDirty && email.minLengthError && (
-            <span>Не корректная длина</span>
-          )) ||
-          (email.isDirty && email.emailError && (
-            <span>Не корректный емейл</span>
-          ))}
-      </FormHelperText>
+      <FormHelperText error>{errorMessage}</FormHelperText>
 
       <FormInput
         inputType="password"
@@ -54,7 +65,6 @@ const SignInForm = () => {
         onBlur={(e) => password.onBlur(e)}
         value={password.value}
       />
-
       <FormHelperText error>
         {(password.isDirty && password.isEmpty && (
           <span>Пароль не может быть пустым</span>
@@ -71,6 +81,7 @@ const SignInForm = () => {
         className={classes.checkbox}
         control={
           <Checkbox
+            className={classes.checkboxSvg}
             checked={checked}
             onChange={(prev) => setChecked(!checked)}
           />

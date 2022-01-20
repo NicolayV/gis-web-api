@@ -15,7 +15,7 @@ const FormInput = ({ children, inputType = "text", ...props }) => {
         {...props}
         startAdornment={
           <InputAdornment position="start">
-            <People />
+            <People className={classes.inputFormSvg} />
           </InputAdornment>
         }
       />
@@ -29,7 +29,7 @@ const FormInput = ({ children, inputType = "text", ...props }) => {
         {...props}
         startAdornment={
           <InputAdornment position="start">
-            <MailTwoTone />
+            <MailTwoTone className={classes.inputFormSvg} {...props} />
           </InputAdornment>
         }
       />
@@ -43,12 +43,15 @@ const FormInput = ({ children, inputType = "text", ...props }) => {
         {...props}
         startAdornment={
           <InputAdornment position="start">
-            <VpnKey />
+            <VpnKey className={classes.inputFormSvg} />
           </InputAdornment>
         }
         endAdornment={
           <InputAdornment position="end">
-            <IconButton onClick={(prev) => setShowPassword(!showPassword)}>
+            <IconButton
+              className={classes.inputFormSvg}
+              onClick={(prev) => setShowPassword(!showPassword)}
+            >
               {showPassword ? "скрыть" : "показать"}
             </IconButton>
           </InputAdornment>

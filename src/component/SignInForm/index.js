@@ -91,7 +91,7 @@ const SignInForm = () => {
 
       <ButtonForm
         inputType="submit"
-        disabled={!email.inputValid || !password.inputValid}
+        // disabled={!email.inputValid || !password.inputValid}
       >
         Войти
       </ButtonForm>

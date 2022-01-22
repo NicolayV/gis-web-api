@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { AuthContext } from "./context";
 import { BrowserRouter } from "react-router-dom";
 import customTheme from "./assets/theme";
-import { CssBaseline, ThemeProvider } from "@material-ui/core";
 
 import AppRouter from "./router/AppRouter";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);

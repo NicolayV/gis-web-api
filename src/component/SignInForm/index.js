@@ -1,16 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Checkbox, FormControlLabel, FormHelperText } from "@material-ui/core";
 
-import { useStyles } from "./style";
+import styles from "./style";
 
 import FormInput from "../UI/Input";
 import ButtonForm from "../UI/Button";
 import useInput from "../../hooks/useInput";
 import { AuthContext } from "../../context";
 import { useNavigate } from "react-router-dom";
+import { Box, Checkbox, FormControlLabel, FormHelperText } from "@mui/material";
 
 const SignInForm = () => {
-  const classes = useStyles();
   const { setIsAuth } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -50,7 +49,7 @@ const SignInForm = () => {
   }, [isDirty, isEmpty, minLengthError, emailError]);
 
   return (
-    <form className={classes.form} onSubmit={onSubmitHandler}>
+    <Box component="form" sx={styles.form} onSubmit={onSubmitHandler}>
       <FormInput
         inputType="email"
         onChange={(e) => email.onChange(e)}
@@ -78,10 +77,10 @@ const SignInForm = () => {
       </FormHelperText>
 
       <FormControlLabel
-        className={classes.checkbox}
+        sx={styles.checkbox}
         control={
           <Checkbox
-            className={classes.checkboxSvg}
+            sx={styles.checkboxSvg}
             checked={checked}
             onChange={(prev) => setChecked(!checked)}
           />
@@ -96,7 +95,7 @@ const SignInForm = () => {
         Войти
       </ButtonForm>
       <ButtonForm inputType="link">Забыли пароль?</ButtonForm>
-    </form>
+    </Box>
   );
 };
 export default SignInForm;

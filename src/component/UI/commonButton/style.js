@@ -1,6 +1,7 @@
 const styles = {
-  root: {
-    display: "flex",
+  btn: {
+    fontSiza: 20,
+    fontWeight: 700,
   },
 };
 

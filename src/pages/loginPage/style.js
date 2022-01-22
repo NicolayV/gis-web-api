@@ -1,6 +1,4 @@
-import { makeStyles } from "@material-ui/core/styles";
-
-export const useStyles = makeStyles(() => ({
+const styles = {
   loginWrapper: {
     flexDirection: "column",
 
@@ -45,6 +43,12 @@ export const useStyles = makeStyles(() => ({
     },
   },
 
+  spanLogo: {
+    display: "flex",
+    flexDirection: "column",
+    marginBottom: "20px",
+  },
+
   title: {
     color: "#FFFFFF",
     marginBottom: "0px",
@@ -63,4 +67,5 @@ export const useStyles = makeStyles(() => ({
   tabs: {
     display: "flex",
   },
-}));
+};
+export default styles;

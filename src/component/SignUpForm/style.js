@@ -1,6 +1,4 @@
-import { makeStyles } from "@material-ui/core/styles";
-
-export const useStyles = makeStyles(() => ({
+const styles = {
   checkbox: {
     marginTop: 5,
     justifyContent: "flex-start",
@@ -11,4 +9,6 @@ export const useStyles = makeStyles(() => ({
     flexDirection: "column",
     justifyContent: "space-around",
   },
-}));
+};
+
+export default styles;

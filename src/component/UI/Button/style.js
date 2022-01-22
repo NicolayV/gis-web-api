@@ -1,6 +1,4 @@
-import { makeStyles } from "@material-ui/core/styles";
-
-export const useStyles = makeStyles(() => ({
+const styles = {
   button: {
     border: "1px solid #FFF323",
     padding: "10px 0px",
@@ -14,4 +12,6 @@ export const useStyles = makeStyles(() => ({
     padding: "10px",
     margin: "10px",
   },
-}));
+};
+
+export default styles;

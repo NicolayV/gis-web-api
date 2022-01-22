@@ -1,16 +1,15 @@
-import React, { useContext, useState } from "react";
-import { Checkbox, FormControlLabel, FormHelperText } from "@material-ui/core";
+import React, { useContext } from "react";
 
-import { useStyles } from "./style";
+import styles from "./style";
 
 import FormInput from "../UI/Input";
 import ButtonForm from "../UI/Button";
 import useInput from "../../hooks/useInput";
 import { AuthContext } from "../../context";
 import { useNavigate } from "react-router-dom";
+import { FormHelperText } from "@mui/material";
 
 const SignUpForm = () => {
-  const classes = useStyles();
   const { setIsAuth } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -27,7 +26,7 @@ const SignUpForm = () => {
   };
 
   return (
-    <form className={classes.form} onSubmit={onSubmitHandler}>
+    <form sx={styles.form} onSubmit={onSubmitHandler}>
       <FormInput
         // inputType="text"
         onChange={(e) => loginName.onChange(e)}

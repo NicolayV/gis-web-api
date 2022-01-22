@@ -1,19 +1,17 @@
-import { Button, Link } from "@material-ui/core";
+import { Button, Link } from "@mui/material";
 import React from "react";
-import { useStyles } from "./style";
+import styles from "./style";
 const ButtonForm = ({
   children,
   disabled = false,
   inputType = "submit",
   ...props
 }) => {
-  const classes = useStyles();
-
   if (inputType === "submit") {
     return (
       <Button
         {...props}
-        className={classes.button}
+        sx={styles.button}
         variant="outlined"
         disabled={disabled}
         type="submit"
@@ -24,7 +22,7 @@ const ButtonForm = ({
   }
   if (inputType === "link") {
     return (
-      <Link {...props} className={classes.link}>
+      <Link {...props} sx={styles.link}>
         {children}
       </Link>
     );

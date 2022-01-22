@@ -1,13 +1,10 @@
-import { makeStyles } from "@material-ui/core/styles";
-// import { makeStyles } from "@material-ui/styles";
-
-export const useStyles = makeStyles(() => ({
+const styles = {
   inputForm: {
     color: "white",
-    fontSize: "26px",
+    fontSize: "20px",
 
-    marginTop: 25,
-    padding: 5,
+    marginTop: "25px",
+    padding: "5px",
     border: "1px solid #FFFFFF",
   },
 
@@ -15,4 +12,6 @@ export const useStyles = makeStyles(() => ({
     color: "white",
     fontSize: "16px",
   },
-}));
+};
+
+export default styles;

@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import { Paper, Tab, Tabs } from "@material-ui/core";
 
-import { useStyles } from "./style";
+import styles from "./style";
 
 import SignInForm from "../../component/SignInForm";
 import SignUpForm from "../../component/SignUpForm";
+import { Paper, Tab, Tabs, Box, Typography } from "@mui/material";
 
 const LoginPage = () => {
-  const classes = useStyles();
-
   const [value, setValue] = useState(0);
   const handleTabs = (e, val) => {
     setValue(val);
@@ -19,18 +17,27 @@ const LoginPage = () => {
   );
 
   return (
-    <div className={classes.loginWrapper}>
-      <span
-        style={{
-          flexDirection: "column",
-          display: "flex",
-        }}
-      >
-        <h1 className={classes.title}>AEROSPACE</h1>
-        <h3 className={classes.subTitle}>AGRO</h3>
-      </span>
+    <Box sx={styles.loginWrapper}>
+      <Typography sx={styles.spanLogo} display="flex" component="span">
+        <Typography
+          sx={styles.title}
+          variant="h3"
+          component="span"
+          gutterBottom
+        >
+          AEROSPACE
+        </Typography>
+        <Typography
+          sx={styles.subTitle}
+          variant="h5"
+          gutterBottom
+          component="span"
+        >
+          AGRO
+        </Typography>
+      </Typography>
 
-      <Paper className={classes.layout}>
+      <Paper sx={styles.layout}>
         <Tabs value={value} onChange={handleTabs}>
           <Tab label="Вход" />
           <Tab label="Регистрация" />
@@ -43,7 +50,7 @@ const LoginPage = () => {
           <SignUpForm />
         </TabPanel>
       </Paper>
-    </div>
+    </Box>
   );
 };
 

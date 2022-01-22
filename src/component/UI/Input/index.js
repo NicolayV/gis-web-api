@@ -1,21 +1,20 @@
+import { MailTwoTone, VpnKey } from "@mui/icons-material";
+import People from "@mui/icons-material/People";
+import { IconButton, Input, InputAdornment } from "@mui/material";
 import React, { useState } from "react";
-import { useStyles } from "./style";
-
-import { IconButton, Input, InputAdornment } from "@material-ui/core";
-import { MailTwoTone, People, VpnKey } from "@material-ui/icons";
+import styles from "./style";
 
 const FormInput = ({ children, inputType = "text", ...props }) => {
-  const classes = useStyles();
   const [showPassword, setShowPassword] = useState(false);
 
   if (inputType === "text") {
     return (
       <Input
-        className={classes.inputForm}
+        sx={styles.inputForm}
         {...props}
         startAdornment={
           <InputAdornment position="start">
-            <People className={classes.inputFormSvg} />
+            <People sx={styles.inputFormSvg} />
           </InputAdornment>
         }
       />
@@ -25,11 +24,11 @@ const FormInput = ({ children, inputType = "text", ...props }) => {
   if (inputType === "email") {
     return (
       <Input
-        className={classes.inputForm}
+        sx={styles.inputForm}
         {...props}
         startAdornment={
           <InputAdornment position="start">
-            <MailTwoTone className={classes.inputFormSvg} {...props} />
+            <MailTwoTone sx={styles.inputFormSvg} {...props} />
           </InputAdornment>
         }
       />
@@ -39,17 +38,17 @@ const FormInput = ({ children, inputType = "text", ...props }) => {
   if (inputType === "password") {
     return (
       <Input
-        className={classes.inputForm}
+        sx={styles.inputForm}
         {...props}
         startAdornment={
           <InputAdornment position="start">
-            <VpnKey className={classes.inputFormSvg} />
+            <VpnKey sx={styles.inputFormSvg} />
           </InputAdornment>
         }
         endAdornment={
           <InputAdornment position="end">
             <IconButton
-              className={classes.inputFormSvg}
+              sx={styles.inputFormSvg}
               onClick={(prev) => setShowPassword(!showPassword)}
             >
               {showPassword ? "скрыть" : "показать"}

@@ -7,7 +7,7 @@ import ButtonForm from "../UI/Button";
 import useInput from "../../hooks/useInput";
 import { AuthContext } from "../../context";
 import { useNavigate } from "react-router-dom";
-import { FormHelperText } from "@mui/material";
+import { Box, FormHelperText } from "@mui/material";
 
 const SignUpForm = () => {
   const { setIsAuth } = useContext(AuthContext);
@@ -26,25 +26,13 @@ const SignUpForm = () => {
   };
 
   return (
-    <form sx={styles.form} onSubmit={onSubmitHandler}>
+    <Box component="form" sx={styles.form} onSubmit={onSubmitHandler}>
       <FormInput
-        // inputType="text"
         onChange={(e) => loginName.onChange(e)}
         onBlur={(e) => loginName.onBlur(e)}
         value={loginName.value}
       />
-
-      <FormHelperText>
-        {(loginName.isDirty && loginName.isEmpty && (
-          <span>Поле не может быть пустым</span>
-        )) ||
-          (loginName.isDirty && loginName.minLengthError && (
-            <span>Не корректная длина имени</span>
-          )) ||
-          (loginName.isDirty && loginName.maxLengthError && (
-            <span>Не корректная длина имени</span>
-          ))}
-      </FormHelperText>
+      <FormHelperText error>{loginName.errorMessages}</FormHelperText>
 
       <FormInput
         inputType="email"
@@ -52,18 +40,7 @@ const SignUpForm = () => {
         onBlur={(e) => email.onBlur(e)}
         value={email.value}
       />
-
-      <FormHelperText error>
-        {(email.isDirty && email.isEmpty && (
-          <span>Поле не может быть пустым</span>
-        )) ||
-          (email.isDirty && email.minLengthError && (
-            <span>Не корректная длина</span>
-          )) ||
-          (email.isDirty && email.emailError && (
-            <span>Не корректный емейл</span>
-          ))}
-      </FormHelperText>
+      <FormHelperText error>{email.errorMessages}</FormHelperText>
 
       <FormInput
         inputType="password"
@@ -71,28 +48,16 @@ const SignUpForm = () => {
         onBlur={(e) => password.onBlur(e)}
         value={password.value}
       />
-
-      <FormHelperText>
-        {(password.isDirty && password.isEmpty && (
-          <span>Пароль не может быть пустым</span>
-        )) ||
-          (password.isDirty && password.maxLengthError && (
-            <span>Слишком длинный пароль</span>
-          )) ||
-          (password.isDirty && password.minLengthError && (
-            <span>Не корректная длина пароля</span>
-          ))}
-      </FormHelperText>
+      <FormHelperText error>{password.errorMessages}</FormHelperText>
 
       <ButtonForm
-        inputType="submit"
         disabled={
           !loginName.inputValid || !email.inputValid || !password.inputValid
         }
       >
         Регистрация
       </ButtonForm>
-    </form>
+    </Box>
   );
 };
 export default SignUpForm;

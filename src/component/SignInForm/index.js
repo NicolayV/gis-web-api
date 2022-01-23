@@ -8,6 +8,7 @@ import useInput from "../../hooks/useInput";
 import { AuthContext } from "../../context";
 import { useNavigate } from "react-router-dom";
 import { Box, Checkbox, FormControlLabel, FormHelperText } from "@mui/material";
+import ButtonLink from "../UI/Link";
 
 const SignInForm = () => {
   const { setIsAuth } = useContext(AuthContext);
@@ -57,12 +58,11 @@ const SignInForm = () => {
       />
 
       <ButtonForm
-        inputType="submit"
-        // disabled={!email.inputValid || !password.inputValid}
+      // disabled={!email.inputValid || !password.inputValid}
       >
         Войти
       </ButtonForm>
-      <ButtonForm inputType="link">Забыли пароль?</ButtonForm>
+      <ButtonLink>Забыли пароль?</ButtonLink>
     </Box>
   );
 };

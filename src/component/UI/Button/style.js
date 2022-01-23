@@ -5,13 +5,6 @@ const styles = {
     marginTop: "20px 0px",
     color: "yellow",
   },
-
-  link: {
-    color: "#FFF323",
-    alignSelf: "center",
-    padding: "10px",
-    margin: "10px",
-  },
 };
 
 export default styles;

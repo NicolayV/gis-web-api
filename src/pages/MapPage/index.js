@@ -6,7 +6,7 @@ import Box from "@mui/material/Box";
 
 import DrawerUi from "../../component/UI/Drawer";
 import styles from "./style";
-import CommonButton from "../../component/UI/commonButton";
+import { Button } from "@mui/material";
 
 const GisMap = () => {
   const navigate = useNavigate();
@@ -22,9 +22,9 @@ const GisMap = () => {
     <Box sx={styles.root}>
       <DrawerUi />
       <h1>GisMap</h1>
-      <CommonButton variant="contained" onClick={logOut}>
+      <Button variant="outlined" onClick={logOut}>
         Log Out
-      </CommonButton>
+      </Button>
     </Box>
   );
 };
@@ -47,31 +47,6 @@ export default GisMap;
 //   }
 // }
 
-// export default GoogleApiWrapper({
+// GoogleApiWrapper({
 //   apiKey: "AIzaSyCwzT2S2gLoOYjRSuRAj-3Phn7apFFby34",
 // })(MapContainer);
-
-// const GisMap = () => {
-//   const navigate = useNavigate();
-//   const { setIsAuth } = useContext(AuthContext);
-
-//   const [drawerToggle, setDrawerToggle] = useState(true);
-//   const drawerToggleHandler = () =>
-//     setDrawerToggle((prevDrawerToggle) => !prevDrawerToggle);
-
-//   const logOut = () => {
-//     localStorage.removeItem("auth");
-//     setIsAuth(false);
-//     navigate("/login");
-//   };
-
-//   return (
-//     <>
-//       <SideDrawer open={drawerToggle} onClose={drawerToggleHandler} />
-//       <div>GisMap</div>
-//       <button onClick={logOut}>Log Out</button>
-//     </>
-//   );
-// };
-
-// export default GisMap;

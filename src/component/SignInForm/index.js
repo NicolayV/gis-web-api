@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 
 import styles from "./style";
 
@@ -18,8 +18,6 @@ const SignInForm = () => {
 
   const [checked, setChecked] = useState(false);
 
-  const [errorMessage, setErrorMessage] = useState(null);
-
   const onSubmitHandler = (event) => {
     event.preventDefault();
     console.log(email.value, password.value, checked);
@@ -27,26 +25,6 @@ const SignInForm = () => {
     localStorage.setItem("auth", "true");
     navigate("/gismap");
   };
-
-  const { isDirty, isEmpty, minLengthError, emailError } = email;
-  useEffect(() => {
-    if (!isDirty) {
-      return;
-    }
-    if (isEmpty) {
-      setErrorMessage(<span>Поле не может быть пустым</span>);
-      return;
-    }
-    if (minLengthError) {
-      setErrorMessage(<span>Не корректная длина</span>);
-      return;
-    }
-    if (emailError) {
-      setErrorMessage(<span>Не корректный емейл</span>);
-      return;
-    }
-    setErrorMessage(null);
-  }, [isDirty, isEmpty, minLengthError, emailError]);
 
   return (
     <Box component="form" sx={styles.form} onSubmit={onSubmitHandler}>
@@ -56,7 +34,7 @@ const SignInForm = () => {
         onBlur={(e) => email.onBlur(e)}
         value={email.value}
       />
-      <FormHelperText error>{errorMessage}</FormHelperText>
+      <FormHelperText error>{email.errorMessages}</FormHelperText>
 
       <FormInput
         inputType="password"
@@ -64,17 +42,7 @@ const SignInForm = () => {
         onBlur={(e) => password.onBlur(e)}
         value={password.value}
       />
-      <FormHelperText error>
-        {(password.isDirty && password.isEmpty && (
-          <span>Пароль не может быть пустым</span>
-        )) ||
-          (password.isDirty && password.maxLengthError && (
-            <span>Слишком длинный пароль</span>
-          )) ||
-          (password.isDirty && password.minLengthError && (
-            <span>Не корректная длина пароля</span>
-          ))}
-      </FormHelperText>
+      <FormHelperText error>{password.errorMessages}</FormHelperText>
 
       <FormControlLabel
         sx={styles.checkbox}

@@ -3,7 +3,7 @@ const styles = {
     color: "white",
     fontSize: "20px",
 
-    marginTop: "25px",
+    marginTop: "15px",
     padding: "5px",
     border: "1px solid #FFFFFF",
   },

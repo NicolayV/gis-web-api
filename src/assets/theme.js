@@ -1,41 +1,34 @@
-import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
-import { orange, teal } from "@mui/material/colors";
-import { handelGothicTL } from "../fonts";
+import { createTheme } from "@mui/material/styles";
+import RalewayRegular from "../fonts/Raleway/static/Raleway-Regular.ttf";
 
 const customTheme = createTheme({
-  // palette: {
-  //   primary: teal,
-  //   secondary: orange,
-  // },
-
   typography: {
-    fontFamily: "Handel-Gothic-TL",
-
-    // subtitle1: {
-    //   fontSize: 12,
-    // },
-    // body1: {
-    //   fontWeight: 500,
-    // },
-    // button: {
-    //   fontStyle: "italic",
-    // },
+    fontFamily: [
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      "sans-serif",
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(","),
   },
+
   components: {
-    // MuiInput: {
-    //   styleOverrides: {
-    //     root: {
-    //       color: "white",
-    //     },
-    //   },
-    // },
-  },
-
-  overrides: {
     MuiCssBaseline: {
-      "@global": {
-        "@font-face": [handelGothicTL],
-      },
+      styleOverrides: `
+        @font-face {
+          font-family: 'Raleway';
+          font-style: normal;
+          font-display: swap;
+          font-weight: 400;
+          src: local('Raleway'), local('Raleway-Regular'), url(${RalewayRegular}) format('ttf');
+          unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
+        }
+      `,
     },
   },
 });

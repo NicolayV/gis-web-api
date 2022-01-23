@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context";
 import { Map, GoogleApiWrapper } from "google-maps-react";
@@ -7,7 +7,6 @@ import Box from "@mui/material/Box";
 import DrawerUi from "../../component/UI/Drawer";
 import styles from "./style";
 import CommonButton from "../../component/UI/commonButton";
-import { Button } from "@mui/material";
 
 const GisMap = () => {
   const navigate = useNavigate();

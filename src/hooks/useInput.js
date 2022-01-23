@@ -7,10 +7,37 @@ const useInput = (initialValue, validations) => {
 
   const valid = useValidation(value, validations);
 
-  const onChange = (event) => setValue(event.target.value);
-  const onBlur = (event) => setIsDirty(true);
+  const [errorMessages, setErrorMessage] = useState("");
 
-  return { value, isDirty, onChange, onBlur, ...valid };
+  const onChange = (event) => setValue(event.target.value);
+  const onBlur = () => setIsDirty(true);
+
+  const { isEmpty, minLengthError, maxLengthError, emailError } = valid;
+
+  useEffect(() => {
+    if (!isDirty) {
+      return;
+    }
+    if (isEmpty) {
+      setErrorMessage("Поле не может быть пустым");
+      return;
+    }
+    if (emailError) {
+      setErrorMessage("Не корректный e-mail");
+      return;
+    }
+    if (minLengthError) {
+      setErrorMessage("Не корректная длина min");
+      return;
+    }
+    if (maxLengthError) {
+      setErrorMessage("Не корректная длина max");
+      return;
+    }
+    setErrorMessage("");
+  }, [emailError, isDirty, isEmpty, maxLengthError, minLengthError]);
+
+  return { errorMessages, value, isDirty, onChange, onBlur, ...valid };
 };
 
 export default useInput;

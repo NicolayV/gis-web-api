@@ -58,7 +58,10 @@ const SignInForm = () => {
       />
 
       <ButtonForm
-      // disabled={!email.inputValid || !password.inputValid}
+        sx={styles.button}
+        variant="outlined"
+        type="submit"
+        // disabled={!email.inputValid || !password.inputValid}
       >
         Войти
       </ButtonForm>

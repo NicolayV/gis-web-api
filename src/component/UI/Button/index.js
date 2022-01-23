@@ -1,14 +1,20 @@
-import { Button, Link } from "@mui/material";
+import { Button } from "@mui/material";
 import React from "react";
-import styles from "./style";
-const ButtonForm = ({ children, disabled = false, ...props }) => {
+const ButtonForm = ({
+  type,
+  variant,
+  sx,
+  children,
+  disabled = false,
+  ...props
+}) => {
   return (
     <Button
       {...props}
-      sx={styles.button}
-      variant="outlined"
+      sx={sx}
+      variant={variant}
       disabled={disabled}
-      type="submit"
+      type={type}
     >
       {children}
     </Button>

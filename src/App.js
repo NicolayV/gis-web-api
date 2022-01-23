@@ -6,6 +6,9 @@ import customTheme from "./assets/theme";
 import AppRouter from "./router/AppRouter";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 
+const API_KEY = process.env.REACT_APP_API_KEY;
+console.log(API_KEY);
+
 function App() {
   const [isAuth, setIsAuth] = useState(false);
 

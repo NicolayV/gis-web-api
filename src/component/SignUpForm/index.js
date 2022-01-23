@@ -51,6 +51,9 @@ const SignUpForm = () => {
       <FormHelperText error>{password.errorMessages}</FormHelperText>
 
       <ButtonForm
+        sx={styles.button}
+        variant="outlined"
+        type="submit"
         disabled={
           !loginName.inputValid || !email.inputValid || !password.inputValid
         }

@@ -1,5 +1,6 @@
 import React, { useCallback, useRef } from "react";
 import { GoogleMap } from "@react-google-maps/api";
+import s from "./index.js";
 
 const containerStyle = {
   width: "100%",
@@ -18,7 +19,7 @@ const Map = ({ center }) => {
   }, []);
 
   return (
-    <div>
+    <div className={s.container}>
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}

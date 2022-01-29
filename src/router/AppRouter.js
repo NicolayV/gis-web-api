@@ -3,6 +3,8 @@ import { Navigate, useRoutes } from "react-router-dom";
 import { AuthContext } from "../context";
 import LoginPage from "../pages/LoginPage/";
 import GisMap from "../pages/MapPage/";
+import TestMap from "../pages/testPage";
+import { MapTiler } from "../component/MapTiler";
 
 const AuthProvider = ({ route, children }) => {
   const { isAuth } = useContext(AuthContext);
@@ -17,6 +19,8 @@ const AppRouter = () => {
 
   const routesPrivate = useRoutes([
     { path: "/gismap", element: <GisMap /> },
+    { path: "/maptiler", element: <MapTiler /> },
+    // { path: "/gismaptest", element: <TestMap /> },
     { path: "/*", element: <Navigate to="/gismap" /> },
   ]);
 

@@ -10,6 +10,7 @@ const FormInput = ({ children, inputType = "text", ...props }) => {
   if (inputType === "text") {
     return (
       <Input
+        disableUnderline
         sx={styles.inputForm}
         {...props}
         startAdornment={
@@ -24,6 +25,7 @@ const FormInput = ({ children, inputType = "text", ...props }) => {
   if (inputType === "email") {
     return (
       <Input
+        disableUnderline
         sx={styles.inputForm}
         {...props}
         startAdornment={
@@ -38,6 +40,7 @@ const FormInput = ({ children, inputType = "text", ...props }) => {
   if (inputType === "password") {
     return (
       <Input
+        disableUnderline
         sx={styles.inputForm}
         {...props}
         startAdornment={
